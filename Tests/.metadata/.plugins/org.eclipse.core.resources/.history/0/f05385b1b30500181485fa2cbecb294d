@@ -1,0 +1,17 @@
+import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Testy");
+		
+		Logger log = Logger.getLogger(Main.class);
+		BasicConfigurator.configure();
+		log.debug("Testy debug");
+		log.info("Testy info");
+
+	}
+
+}

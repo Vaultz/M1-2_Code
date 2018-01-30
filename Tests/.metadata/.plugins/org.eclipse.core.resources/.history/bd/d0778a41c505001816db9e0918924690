@@ -1,0 +1,46 @@
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import org.apache.log4j.Logger;
+
+ public class KeyboardListener extends KeyAdapter{
+	private static final Logger myLogger = Logger.getLogger(ThreadsController.class);
+
+ 	
+ 		public void keyPressed(KeyEvent e){
+ 		    switch(e.getKeyCode()){
+		    	case 39:	// -> Right 
+		    				//if it's not the opposite direction
+		    				if(ThreadsController.directionSnake!=2)  {
+		    					ThreadsController.directionSnake=1;
+		    					myLogger.info("KeyboardListener.keypressed() : Snake goes right");
+		    		    					
+		    				}
+		    			  	break;
+		    	case 38:	// -> Top
+							if(ThreadsController.directionSnake!=4) {
+
+								ThreadsController.directionSnake=3;
+								myLogger.info("KeyboardListener.keypressed() : Snake goes up");	
+							}
+		    				break;
+		    				
+		    	case 37: 	// -> Left 
+							if(ThreadsController.directionSnake!=1) {
+		    					myLogger.info("KeyboardListener.keypressed() : Snake goes left");
+								ThreadsController.directionSnake=2;
+							}
+		    				break;
+		    				
+		    	case 40:	// -> Bottom
+							if(ThreadsController.directionSnake!=3) {
+		    					myLogger.info("KeyboardListener.keypressed() : Snake goes down");
+								ThreadsController.directionSnake=4;
+							}
+		    				break;
+		    	
+		    	default: 	break;
+ 		    }
+ 		}
+ 	
+ }
